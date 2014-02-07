@@ -124,8 +124,10 @@ class HttpClient
         $version = isset($options['api_version']) ? '/' . $options['api_version'] : '';
 
         // adds a suffix (".html", ".json") to url
-        $suffix = isset($options['response_type']) ? $options['response_type'] : "json";
-        $path   = $path . '.' . $suffix;
+        $suffix = isset($options['response_type']) ? $options['response_type'] : '';
+        if ($suffix != '') {
+            $path = $path . '.' . $suffix;
+        }
 
         $path = $version . $path;
 
