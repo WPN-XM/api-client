@@ -2,26 +2,29 @@
 
 namespace WPNXM\API\Calls;
 
-use WPNXM\API\Client;
-
 /**
  * Version request to the Software Components Registry.
  */
-class Version extends Client
+class Version
 {
+    public function __construct($client) 
+    {
+        $this->client = $client;
+    }
+    
     public function isLatest($component, $version, array $options = array())
     {
         $body = (isset($options['query']) ? $options['query'] : array());
 
         $url = '/version/' . rawurlencode($component) . '/' . rawurlencode($version);
 
-        return $this->get($url, $body, $options);
+        return $this->client->get($url, $body, $options);
     }
     
     public function getLatestVersions(array $options = array())
     {
         $body = (isset($options['query']) ? $options['query'] : array());
 
-        return $this->get('/version/latest', $body, $options);
+        return $this->client->get('/version/latest', $body, $options);
     }
 }

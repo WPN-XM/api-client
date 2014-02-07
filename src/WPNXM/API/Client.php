@@ -11,11 +11,11 @@ class Client extends HttpClient
 {
     public function version()
     {
-        return new \WPNXM\API\Calls\Version();
+        return new \WPNXM\API\Calls\Version($this);
     }
     
     public function download()
     {
-        return new \WPNXM\API\Calls\Download();
+        return new \WPNXM\API\Calls\Download($this);
     }
 }

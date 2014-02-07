@@ -2,13 +2,16 @@
 
 namespace WPNXM\API\Calls;
 
-use WPNXM\API\Client;
-
 /**
  * Download request to the Software Components Registry.
  */
-class Download extends Client
+class Download
 {
+    public function __construct($client) 
+    {
+        $this->client = $client;
+    }
+    
     public function componentByVersion($component, $version, array $options = array())
     {
         $body = (isset($options['query']) ? $options['query'] : array());
