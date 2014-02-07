@@ -15,7 +15,7 @@ class Download extends Client
 
         $url = '/download/' . rawurlencode($this->component) . '/' . rawurlencode($this->version);
 
-        return $this->client->get($url, $body, $options);
+        return $this->get($url, $body, $options);
     }
     
     public function latestVersion($component, array $options = array())
@@ -24,6 +24,6 @@ class Download extends Client
 
         $url = '/download/' . rawurlencode($this->component);
 
-        return $this->client->get($url, $body, $options);
+        return $this->get($url, $body, $options);
     }
 }
