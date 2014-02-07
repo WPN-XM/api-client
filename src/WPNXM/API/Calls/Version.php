@@ -13,7 +13,7 @@ class Version extends Client
     {
         $body = (isset($options['query']) ? $options['query'] : array());
 
-        $url = '/version/' . rawurlencode($this->component) . '/' . rawurlencode($this->version);
+        $url = '/version/' . rawurlencode($component) . '/' . rawurlencode($version);
 
         return $this->get($url, $body, $options);
     }

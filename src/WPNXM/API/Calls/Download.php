@@ -13,7 +13,7 @@ class Download extends Client
     {
         $body = (isset($options['query']) ? $options['query'] : array());
 
-        $url = '/download/' . rawurlencode($this->component) . '/' . rawurlencode($this->version);
+        $url = '/download/' . rawurlencode($component) . '/' . rawurlencode($version);
 
         return $this->get($url, $body, $options);
     }
@@ -22,7 +22,7 @@ class Download extends Client
     {
         $body = (isset($options['query']) ? $options['query'] : array());
 
-        $url = '/download/' . rawurlencode($this->component);
+        $url = '/download/' . rawurlencode($component);
 
         return $this->get($url, $body, $options);
     }
