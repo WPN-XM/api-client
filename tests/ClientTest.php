@@ -2,7 +2,7 @@
 
 namespace WPNXM\Tests;
 
-usa WPNXM\API\Client;
+use WPNXM\API\Client;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
