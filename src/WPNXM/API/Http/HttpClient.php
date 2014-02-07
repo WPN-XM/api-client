@@ -12,7 +12,7 @@ use WPNXM\API\Http\Response;
 class HttpClient
 {
     protected $options = array(
-        'base'        => 'https://api.wpn-xm.org',
+        'base'        => 'http://api.wpn-xm.org',
         'api_version' => 'v1',
         'user_agent'  => 'wpn-xm/api-client/0.2.0 (https://github.com/WPN-XM/api-client)'
     );
