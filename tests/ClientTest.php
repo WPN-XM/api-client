@@ -20,9 +20,14 @@ class ClientTest extends \PHPUnit_Framework_TestCase
         $this->client = new Client;
     }
 
-    public function testGetApiKey()
+    public function testVersion()
     {
-    	$this->assertContains('api-key', $this->client->apiKey);
+        $this->assertInstanceOf('\WPNXM\API\Calls\Version', $this->client->version());
+    }
+    
+    public function testDownload()
+    {
+        $this->assertInstanceOf('\WPNXM\API\Calls\Download', $this->client->download());
     }
 
     /**
