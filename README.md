@@ -23,6 +23,10 @@ by simply adding the following line to your project's `composer.json` file.
 
 ## Usage
 
+### Developer Hint
+
+If using "xdebug", then set "xdebug.max_nesting_level = 200".
+
 ### Authentication
 
 ##### Without authentication
