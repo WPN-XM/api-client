@@ -20,3 +20,31 @@ by simply adding the following line to your project's `composer.json` file.
             "wpn-xm/api-client": "dev-master"
         }
     }
+
+## Usage
+
+### Authentication
+
+##### Without authentication
+
+```php
+$client = new WPNXM\API\Client();
+
+// with options
+$client = new WPNXM\API\Client(array(), $options);
+```
+
+##### OAuth with "access_token" authentication
+
+```php
+$client = new WPNXM\API\Client('YourAccessToken', $options);
+```
+
+##### OAuth with "client_secret" authentication
+
+```php
+$auth = array('client_id' => '123', 'client_secret' => 'YourClientSecret');
+
+$client = new WPNXM\API\Client($auth, $options);
+```
+
