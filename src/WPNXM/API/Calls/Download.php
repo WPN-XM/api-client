@@ -18,7 +18,7 @@ class Download
 
         $url = '/download/' . rawurlencode($component) . '/' . rawurlencode($version);
 
-        return $this->get($url, $body, $options);
+        return $this->client->get($url, $body, $options);
     }
     
     public function latestVersion($component, array $options = array())
@@ -27,6 +27,6 @@ class Download
 
         $url = '/download/' . rawurlencode($component);
 
-        return $this->get($url, $body, $options);
+        return $this->client->get($url, $body, $options);
     }
 }
