@@ -1,6 +1,6 @@
 <?php
 
-namespace WPN-XM\API;
+namespace WPNXM\API;
 
 /**
  * The WPN-XM API client for the Software Components Registry.

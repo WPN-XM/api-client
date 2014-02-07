@@ -26,8 +26,8 @@
     },
     "autoload": {
         "psr-0": {
-            "WPN-XM\\API\\": "src/",
-            "WPN-XM\\API\\Tests\\": "tests/"
+            "WPNXM\\API\\": "src/",
+            "WPNXM\\API\\Tests\\": "tests/"
         }
     },
     "minimum-stability": "dev"

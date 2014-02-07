@@ -1,8 +1,8 @@
 <?php
 
-namespace WPN-XM\Tests;
+namespace WPNXM\Tests;
 
-usa WPN-XM\API\Client;
+usa WPNXM\API\Client;
 
 class ClientTest extends \PHPUnit_Framework_TestCase
 {
