@@ -1,0 +1,27 @@
+#
+# .travis.yml - configuration file for the travis continuous integration service
+#
+# see http://about.travis-ci.org/docs/user/languages/php for more hints
+#
+language: php
+
+php:
+  - 5.3
+  - 5.4
+  - 5.5
+
+before_install:
+  - composer self-update
+  - composer install --dev --prefer-dist --no-interaction
+  - phpunit -c tests/phpunit.xml.travis
+
+notifications:
+  email: false
+  irc:
+    channels:
+      - "irc.freenode.org#koch"
+    use_notice: true
+
+# reduce commit history of git checkout
+git:
+  depth: 1
