@@ -26,11 +26,11 @@ class AuthHandler
     public function getAuthType()
     {
 
-        if (isset($this->auth['client_id']) && isset($this->auth['client_secret'])) {
+        if (isset($this->auth['client_id']) === true && isset($this->auth['client_secret']) === true) {
             return self::AUTH_TYPE_SECRET;
         }
 
-        if (isset($this->auth['access_token'])) {
+        if (isset($this->auth['access_token']) === true) {
             return self::AUTH_TYPE_TOKEN;
         }
 
@@ -39,7 +39,7 @@ class AuthHandler
 
     public function onRequestBeforeSend(Event $event)
     {
-        if (empty($this->auth)) {
+        if (empty($this->auth) === true) {
             return;
         }
 

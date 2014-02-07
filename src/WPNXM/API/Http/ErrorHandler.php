@@ -3,7 +3,7 @@
 namespace WPNXM\API\Http;
 
 /**
- * ErrorHandler turns repsonse body into a correct error message.
+ * ErrorHandler turns the response body into a correct error message.
  */
 class ErrorHandler
 {
@@ -14,11 +14,11 @@ class ErrorHandler
         $code     = $response->getStatusCode();
         $message  = null;
 
-        if ($response->isServerError()) {
+        if ($response->isServerError() === true) {
             throw new \Exception('Server Error ' . $code, $code);
         }
 
-        if ($response->isClientError()) {
+        if ($response->isClientError() === true) {
             $body    = WPNXM\API\Http\HttpClient::getBody($response);
             $message = $this->getErrorMessageByBodyType($body);
             throw new \Exception($message, $code);
@@ -43,5 +43,4 @@ class ErrorHandler
         // if HTML and in all other cases, return whole body content as error message
         return $body;
     }
-
 }

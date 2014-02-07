@@ -11,7 +11,6 @@ use WPNXM\API\Http\Response;
  */
 class HttpClient
 {
-
     protected $options = array(
         'base'        => 'https://api.wpn-xm.org',
         'api_version' => 'v1',
@@ -87,7 +86,7 @@ class HttpClient
 
         $options = array_merge($this->options, $options);
 
-        if (isset($options['headers'])) {
+        if (isset($options['headers']) === true) {
             $headers = $options['headers'];
             unset($options['headers']);
         }
@@ -122,11 +121,11 @@ class HttpClient
     public function createRequest($httpMethod, $path, $body = null, array $headers = array(), array $options = array())
     {
         // api_version is appended to host
-        $version = (isset($options['api_version']) ? "/" . $options['api_version'] : "");
+        $version = isset($options['api_version']) ? '/' . $options['api_version'] : '';
 
         // adds a suffix (".html", ".json") to url
-        $suffix = (isset($options['response_type']) ? $options['response_type'] : "json");
-        $path   = $path . "." . $suffix;
+        $suffix = isset($options['response_type']) ? $options['response_type'] : "json";
+        $path   = $path . '.' . $suffix;
 
         $path = $version . $path;
 
