@@ -7,6 +7,9 @@ namespace WPNXM\API\Http;
  */
 class Response
 {
+    public $body;
+    public $code;
+    public $headers;
 
     function __construct($body, $code, $headers)
     {

@@ -12,7 +12,7 @@ class ErrorHandler
         $request  = $event['request'];
         $response = $request->getResponse();
         $code     = $response->getStatusCode();
-        $message  = null;
+        $message  = '';
 
         if ($response->isServerError() === true) {
             throw new \Exception('Server Error ' . $code, $code);

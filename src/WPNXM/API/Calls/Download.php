@@ -5,13 +5,8 @@ namespace WPNXM\API\Calls;
 /**
  * Download request to the Software Components Registry.
  */
-class Download
+class Download extends Base
 {
-    public function __construct($client) 
-    {
-        $this->client = $client;
-    }
-    
     public function componentByVersion($component, $version, array $options = array())
     {
         $body = (isset($options['query']) ? $options['query'] : array());

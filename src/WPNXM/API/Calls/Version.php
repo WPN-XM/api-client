@@ -5,13 +5,8 @@ namespace WPNXM\API\Calls;
 /**
  * Version request to the Software Components Registry.
  */
-class Version
+class Version extends Base
 {
-    public function __construct($client) 
-    {
-        $this->client = $client;
-    }
-    
     public function isLatest($component, $version, array $options = array())
     {
         $body = (isset($options['query']) ? $options['query'] : array());

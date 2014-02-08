@@ -11,6 +11,8 @@ use WPNXM\API\Http\Response;
  */
 class HttpClient
 {
+    public $client;
+    
     protected $options = array(
         'base'        => 'http://api.wpn-xm.org',
         'api_version' => 'v1',
