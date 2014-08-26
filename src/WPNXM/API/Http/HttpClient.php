@@ -1,4 +1,12 @@
 <?php
+/**
+ * WPИ-XM Server Stack
+ * Copyright © 2010 - 2014 Jens-André Koch <jakoch@web.de>
+ * http://wpn-xm.org/
+ *
+ * This source file is subject to the terms of the MIT license.
+ * For full copyright and license information, view the bundled LICENSE file.
+ */
 
 namespace WPNXM\API\Http;
 
@@ -12,13 +20,13 @@ use WPNXM\API\Http\Response;
 class HttpClient
 {
     public $client;
-    
+
     protected $options = array(
         'base'        => 'http://api.wpn-xm.org',
         'api_version' => 'v1',
         'user_agent'  => 'wpn-xm/api-client/0.2.0 (https://github.com/WPN-XM/api-client)'
     );
-    
+
     protected $headers = array();
 
     public function __construct($auth = array(), array $options = array())

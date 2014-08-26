@@ -1,7 +1,7 @@
 {
     "name": "wpn-xm/api-client",
     "description": "The official WPN-XM API Client - for working with the Software Components Registry",
-    "license": "GPL-2.0+",
+    "license": "MIT",
     "keywords": ["wpn-xm", "api", "client", "library", "server", "sdk"],
     "homepage": "http://wpn-xm.org/",
     "type": "library",

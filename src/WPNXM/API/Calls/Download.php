@@ -1,4 +1,12 @@
 <?php
+/**
+ * WPИ-XM Server Stack
+ * Copyright © 2010 - 2014 Jens-André Koch <jakoch@web.de>
+ * http://wpn-xm.org/
+ *
+ * This source file is subject to the terms of the MIT license.
+ * For full copyright and license information, view the bundled LICENSE file.
+ */
 
 namespace WPNXM\API\Calls;
 
@@ -15,7 +23,7 @@ class Download extends Base
 
         return $this->client->get($url, $body, $options);
     }
-    
+
     public function latestVersion($component, array $options = array())
     {
         $body = (isset($options['query']) ? $options['query'] : array());
